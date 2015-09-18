@@ -1,0 +1,7 @@
+<view display-name="Request Id List" datasource="ds1">
+	<columns>
+		<column name="request_id" 				display-name="Request Number" 	
+				table="web_request" 			type="long"			
+				visible="true"/>
+	</columns>
+</view>

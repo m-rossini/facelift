@@ -1,0 +1,19 @@
+<view display-name="Request Accounts" datasource="ds1">
+	<columns>
+		<column name="request_id" 				display-name="Request Number" 	
+				table="web_request" 			type="long"			
+				visible="true"/>
+		<column name="web_request_id"
+				table="web_request_requests" 	type="long"			
+				visible="false"/>
+		<column name="proc_request_id"          display-name="Account Number"
+				table="web_request_requests" 	type="long"			
+				visible="false"/>
+	</columns>
+	<relations>
+		<relation from-table="web_request" 			
+				  from-column="request_id" 
+				  to-table="web_request_requests" 	
+				  to-column="web_request_id"/>
+	</relations>
+</view>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping
+>
+
+    <class
+        name="br.com.auster.facelift.requests.model.InputFile"
+        table="PROC_REQUEST_INFILE"
+        dynamic-update="false"
+        dynamic-insert="false"
+        select-before-update="false"
+        optimistic-lock="version">
+			<composite-id unsaved-value="any">
+				<key-property 		name="filename" 	column="FILENAME" 		type="string"				length="512"/>
+				<key-many-to-one 	name="request" 		column="REQUEST_ID" 	
+									class="br.com.auster.facelift.requests.model.Request"/>
+			</composite-id>
+			
+	</class>
+</hibernate-mapping>	
+

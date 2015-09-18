@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<appender name="AUDIT__" class="org.apache.log4j.ConsoleAppender">
+	<param name="Threshold" value="DEBUG"/>
+	<layout class="org.apache.log4j.PatternLayout">
+		<param name="ConversionPattern" value="%d{ABSOLUTE} %-5p [(%c{1}) %t] %m%n"/>
+	</layout>
+</appender>

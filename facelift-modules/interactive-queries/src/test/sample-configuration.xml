@@ -1,0 +1,7 @@
+<configuration datasource-config="src/test/sample-ds.xml">
+	<views>
+		<view-definition name="view1">src/test/view1-definition.xml</view-definition>
+		<view-definition name="view2">src/test/view2-definition.xml</view-definition>
+		<view-definition name="view3">src/test/view3-definition.xml</view-definition>
+	</views>
+</configuration>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+<configuration persistence="br.com.auster.facelift.persistence.jdbc.JNDIJDBCPersistenceService">
+	<persistence-configuration jndi-name="java:/facelift/requests/RequestDS"/>
+</configuration>
+-->
+<configuration persistence="br.com.auster.facelift.persistence.hibernate.LocalHibernatePersistenceService">
+	<persistence-configuration>
+		<hibernate file="br/com/auster/facelift/cycle/hibernate/hibernate-configuration.xml"/>
+	</persistence-configuration>
+</configuration>

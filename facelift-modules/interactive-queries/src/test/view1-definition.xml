@@ -1,0 +1,32 @@
+<view display-name="Account Status" datasource="ds1">
+	<columns>
+		<column name="request_id" 				display-name="Request Number" 	
+				table="web_request" 			type="long"			
+				visible="true"/>
+		<column name="web_request_id"
+				table="web_request_requests" 	type="long"			
+				visible="false"/>
+		<column name="proc_request_id"
+				table="web_request_requests" 	type="long"			
+				visible="false"/>
+		<column name="request_id"
+				table="proc_request" 			type="long"			
+				visible="false"/>
+		<column name="request_label" 			display-name="Account Number" 	
+				table="proc_request" 			type="varchar"		
+				visible="true"/>
+		<column name="latest_status" 			display-name="Account Status" 	
+				table="proc_request" 			type="integer"		
+				visible="true"/>						
+	</columns>
+	<relations>
+		<relation from-table="web_request" 			
+				  from-column="request_id" 
+				  to-table="web_request_requests" 	
+				  to-column="web_request_id"/>
+		<relation from-table="proc_request"	
+				  from-column="request_id" 
+				  to-table="web_request_requests" 	
+				  to-column="proc_request_id"/>				  
+	</relations>
+</view>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="show_sql">false</property>
+        <property name="use_outer_join">true</property>
+		<property name="hbm2ddl.auto">create</property>
+
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://jean:5432/demodb</property>
+        <property name="connection.username">test</property>
+        <property name="connection.password">test</property>
+        <property name="dialect">net.sf.hibernate.dialect.PostgreSQLDialect</property>
+		
+		<mapping resource="br/com/auster/facelift/cycle/model/Cycle.hbm.xml"/>
+		<mapping resource="br/com/auster/facelift/cycle/model/CycleProcessingId.hbm.xml"/>
+    </session-factory>
+
+</hibernate-configuration>

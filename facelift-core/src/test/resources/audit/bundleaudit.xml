@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<audit 
+	configuration-file="audit/auditlog.xml"
+	bundle-file="audit/AuditMessages"/>

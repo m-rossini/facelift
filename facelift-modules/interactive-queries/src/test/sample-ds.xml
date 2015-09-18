@@ -1,0 +1,8 @@
+<datasources>
+	<datasource name="ds1">
+		<property name="iq.jdbc.url">jdbc:postgresql://jean:5432/portaldb</property>
+		<property name="iq.jdbc.driver">org.postgresql.Driver</property>
+		<property name="iq.jdbc.username">facelift</property>
+		<property name="iq.jdbc.password">password</property>
+	</datasource>
+</datasources>

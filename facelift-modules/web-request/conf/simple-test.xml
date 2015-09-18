@@ -1,0 +1,34 @@
+<locator xmlns:log4j="http://auster.com.br/facelift/">
+	<params>
+		<param key="name" value="local.test"/>
+	</params>
+	<log-service id="service.log" type="local" class-impl="br.com.auster.facelift.services.log.LogService">
+	    <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	        <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+	            <param name="Threshold" value="DEBUG"/>
+	            <layout class="org.apache.log4j.PatternLayout">
+	                <param name="ConversionPattern" value="%d{ABSOLUTE} %-5p [(%c{1}) %t] %m%n"/>
+	            </layout>
+	        </appender>
+	        <root>
+	            <priority value="info"/>
+	            <appender-ref ref="CONSOLE"/>
+	        </root>
+	    </log4j:configuration>	
+		</log-service>		
+		<plugin-service id="service.plugin" type="local" class-impl="br.com.auster.facelift.services.plugin.impl.XMLPluginService">
+			<configuration executor="br.com.auster.facelift.services.plugin.impl.SimplePluginExecutor">
+				<plugins>
+					<plugin pluginPoint="webrequest.create">br.com.auster.facelift.requests.web.test.TestPlugin</plugin>
+					<plugin pluginPoint="webrequest.create" triggerValue="value1">br.com.auster.facelift.requests.web..test.TestPlugin</plugin>
+				</plugins>
+			</configuration>
+		</plugin-service>
+	<services>
+		<service id="service.request" type="local" class-impl="br.com.auster.facelift.requests.web.hibernate.WebHibernateRequestManager">
+			<configuration>
+				<hibernate file="conf/hibernate-configuration.xml"/>
+			</configuration>
+		</service>
+	</services>
+</locator>
